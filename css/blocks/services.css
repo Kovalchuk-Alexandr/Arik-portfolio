@@ -1,0 +1,18 @@
+.services {
+    /* padding: 80px 64px 0px 64px; */
+    padding-top: 80px;
+    padding-top: clamp(1.875rem, -1.466rem + 8.62vw, 5rem);
+    padding-inline: 0;
+}
+
+.services__row {
+    display: flex;
+    gap: 32px;
+
+    /* Инициализация автосчетчика */
+    counter-reset: my-counter;
+}
+
+.services__row > * {
+    flex: 1;
+}

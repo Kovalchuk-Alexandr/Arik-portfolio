@@ -1,0 +1,28 @@
+.partners {
+    padding-bottom: 128px;
+    padding-bottom: clamp(1.875rem, -4.672rem + 16.9vw, 8rem);
+}
+
+.partners__row {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+@media (max-width: 620px) {
+    
+}
+
+@media (max-width: 575px) {
+    .partners__row {
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+}

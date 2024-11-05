@@ -1,0 +1,5 @@
+.testimonials__grid-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}

@@ -1,0 +1,323 @@
+.process__timeline {
+    position: relative;
+    padding-top: 158px;
+}
+
+.process__timeline::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 0px;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--border-default);
+    border-radius: 50%;
+    backdrop-filter: blur(30px);
+    background: var(--background-muted);
+    background-image: url('./../../img/ui/ui-arrow-down.svg');
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    transform: translate(-50%, 0%);
+}
+
+.process__timeline::after {
+    content: "";
+
+    position: absolute;
+    top: 62px;
+    left: 50%;
+
+    width: 1px;
+    height: 96px;
+
+    background: var(--border-default);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+
+    counter-reset: my-counter;
+}
+
+
+.timeline__item {
+    position: relative;
+    width: 50%;
+
+    counter-increment: my-counter;
+}
+
+.timeline__item:nth-child(odd) .timeline__item-box {
+    margin-left: auto;
+}
+
+.timeline__item:nth-child(even) .timeline__item-box {
+    margin-right: auto;
+}
+
+.timeline__item + .timeline__item {margin-top: calc(-1 * var(--padding));}
+
+/* Нечетные блоки */
+.timeline__item:nth-child(odd) {
+    margin-left: auto;
+    padding-left: var(--padding-before);
+ }
+
+/* Четные  блоки */
+.timeline__item:nth-child(even) {
+    margin-right: auto;
+    padding-right: var(--padding-before);
+ }
+
+/* Вертикальная полоска */
+.timeline__item::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: var(--border-default);
+}
+
+.timeline__item:nth-child(odd)::before {left: 0;}
+
+.timeline__item:nth-child(even)::before {right: 0;}
+
+/* Последняя линия 50%  */
+.timeline__item:last-child::before {height: 50%;}
+
+
+
+/* Кружок с номером */
+.timeline__item::after {
+    position: absolute;
+    z-index: 9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    content: "0" counter(my-counter);
+
+    top: 50%;
+    width: 40px;
+    height: 40px;
+        
+    outline: var(--outline) solid var(--text-inverse);
+    border: 1px solid var(--border-tl);
+    border-radius: 50%;
+    backdrop-filter: blur(30px);
+    background: var(--background-muted-tl);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 160%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-default);
+}
+
+.timeline__item:nth-child(odd)::after {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.timeline__item:nth-child(even)::after {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+
+/*  Общий контейнер для item  */
+.timeline__item-box {
+    border: 1px solid var(--border-default);
+    border-radius: 2px;
+    padding: var(--padding);
+    /* width: 600px; */
+
+    backdrop-filter: blur(30px);
+    background: var(--background-muted);
+}
+
+.timeline__time {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    border: 1px solid var(--border-default);
+    border-radius: 2px;
+    padding: 7px;
+    /* width: 68px; */
+    /* height: 30px; */
+
+    backdrop-filter: blur(30px);
+    background: var(--background-muted);
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--text-default);
+}
+
+.timeline__subtitle {
+    margin-bottom: 4px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 160%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.timeline__title {
+    margin-bottom: 16px;
+
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-default);
+}
+
+.timeline__desc {
+    margin-bottom: 32px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: var(--text-muted);
+}
+
+.timeline__steps {
+    display: grid;
+    gap: 16px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: var(--text-default);
+}
+
+.timeline__steps-item {
+    position: relative;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline__steps-item::before {
+    position: absolute;
+    left: 0;
+    /* top: 12px; */
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--text-default);
+}
+
+@media (max-width: 1329px) {
+    .timeline {
+        --padding: 24px;
+        --outline: 8px;
+        --padding-before: 4%;
+    }
+}
+
+@media (max-width: 575px) {
+    .timeline {
+        margin-left: 3%;
+        /* --padding: 16px; */
+        --padding-before: 5%;
+        gap: 16px;
+    }
+
+    .timeline__item {
+        width: 100%;
+    }
+
+    .timeline__item:nth-child(even) {
+        margin-right: unset;
+        padding-right: unset;
+        padding-left: var(--padding-before);
+    }
+
+    .timeline__item:nth-child(even)::after {
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .timeline__item:nth-child(even)::before {right: 100%;}
+
+    .timeline__item + .timeline__item {margin-top: var(--padding);}
+
+    .timeline__item::before {
+        /* top: 0; */
+        height: 110%;
+    }
+
+    .timeline__item:first-child::before {
+        top: 50%;
+        height: 60%;}
+
+    .process__timeline {
+        padding-top: 0;
+    }
+
+    .process__timeline::before {
+        display: none;
+        left: 3%;
+    }
+
+    .process__timeline::after {
+        display: none;
+        left: 3%;
+    }
+}
+
+@media (max-width: 420px) {
+    .timeline__item-box {
+        padding: 18px;
+    }
+
+    .timeline__title {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .timeline__subtitle {margin-bottom: 6px;}
+
+    .timeline__time {
+        top: 3vw;
+        right: 3vw;
+        font-size: 10px;
+    }
+
+    .timeline__desc {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 160%;
+    }
+
+    .timeline__steps {
+        gap: 14px;
+
+        font-size: 14px;
+        line-height: 160%;
+        color: var(--text-default);
+    }
+}

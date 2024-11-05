@@ -1,0 +1,66 @@
+.process {
+    margin-top: 160px;
+    margin-top: clamp(2.5rem, -4.423rem + 19.23vw, 10rem);
+}
+
+.process__header {
+    max-width: 740px;
+    margin: 0 auto;
+    padding-bottom: 48px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 170%;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.process__name {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 160%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-default);
+}
+
+.process__title {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 128px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--text-default);
+}
+
+.process__title span{
+    font-family: "Gambetta", sans-serif;
+    font-style: italic;
+}
+
+.process__header p {
+    max-width: 500px;
+    
+}
+
+.process__header p +  p {
+    margin-top: 1em;
+}
+
+@media (max-width: 575px) {
+    .process__header {
+        padding-bottom: 32px;
+        font-size: 16px;
+    }
+    
+    .process__title {
+        font-size: 64px;
+    }
+}

@@ -1,0 +1,41 @@
+/* Fonts */
+@import './../fonts/chillax/css/chillax.css';
+@import './../fonts/gambetta/css/gambetta.css';
+@import './../fonts/satoshi/stylesheet.css';
+
+
+/* =============  Base ================= */
+@import './base/reset.css';
+@import './base/vars.css';
+@import './base/base.css';
+@import './base/buttons.css';
+
+@import './base/mobile-nav-button.css';
+@import './base/mobile-nav.css';
+
+
+/* =============  Blocks ================= */
+@import './blocks/nav.css';
+@import './blocks/hero.css';
+@import './blocks/partners.css';
+@import './blocks/services.css';
+@import './blocks/service.css';
+@import './blocks/round-icon.css';
+@import './blocks/link.css';
+@import './blocks/works.css';
+@import './blocks/work.css';
+@import './blocks/process.css';
+@import './blocks/timeline.css';
+@import './blocks/testimonials.css';
+@import './blocks/cards.css';
+@import './blocks/card.css';
+@import './blocks/about.css';
+@import './blocks/banner.css';
+@import './blocks/cta.css';
+@import './blocks/footer.css';
+@import './blocks/footer-nav.css';
+
+/* =============  Media ================= */
+@import './base/media.css';
+
+
